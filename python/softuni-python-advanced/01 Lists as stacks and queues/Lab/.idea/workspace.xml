@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3f5bfe6d-8539-4ddb-ab3a-e1c4c900c0a2" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1a79nF7fTcLUbjU8VQEejrOUG0X" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager" selected="Python.05_hot_potato">
+    <configuration name="02_matching_brackets" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Lab" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/PycharmProjects/playground/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/02_matching_brackets.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="03_supermarket" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Lab" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/PycharmProjects/playground/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/03_supermarket.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="04_water_dispenser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Lab" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/PycharmProjects/playground/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04_water_dispenser.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="05_hot_potato" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Lab" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/PycharmProjects/playground/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/05_hot_potato.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="queue_demo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Lab" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/PycharmProjects/playground/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/queue_demo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.05_hot_potato" />
+        <item itemvalue="Python.04_water_dispenser" />
+        <item itemvalue="Python.03_supermarket" />
+        <item itemvalue="Python.queue_demo" />
+        <item itemvalue="Python.02_matching_brackets" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3f5bfe6d-8539-4ddb-ab3a-e1c4c900c0a2" name="Default Changelist" comment="" />
+      <created>1586075929534</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586075929534</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="615" y="120" key="#01_reverse_string" timestamp="1586076287825">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state x="615" y="120" key="#01_reverse_string/41.23.1639.1027@41.23.1639.1027" timestamp="1586076287825" />
+    <state x="615" y="120" key="#02_matching_brackets" timestamp="1586076849219">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state x="615" y="120" key="#02_matching_brackets/41.23.1639.1027@41.23.1639.1027" timestamp="1586076849219" />
+    <state x="615" y="120" key="#03_supermarket" timestamp="1586078869336">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state x="615" y="120" key="#03_supermarket/41.23.1639.1027@41.23.1639.1027" timestamp="1586078869336" />
+    <state x="615" y="120" key="#04_water_dispenser" timestamp="1586091207499">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state x="615" y="120" key="#04_water_dispenser/41.23.1639.1027@41.23.1639.1027" timestamp="1586091207499" />
+    <state x="697" y="85" key="#05_hot_potato" timestamp="1586093058570">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state x="697" y="85" key="#05_hot_potato/41.23.1639.1027@41.23.1639.1027" timestamp="1586093058570" />
+    <state x="719" y="407" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1586076236410">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state x="719" y="407" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/41.23.1639.1027@41.23.1639.1027" timestamp="1586076236410" />
+    <state x="615" y="120" key="#queue_demo" timestamp="1586077947243">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state x="615" y="120" key="#queue_demo/41.23.1639.1027@41.23.1639.1027" timestamp="1586077947243" />
+    <state width="1341" height="190" key="GridCell.Tab.0.bottom" timestamp="1586095753425">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state width="1341" height="190" key="GridCell.Tab.0.bottom/41.23.1639.1027@41.23.1639.1027" timestamp="1586095753425" />
+    <state width="1341" height="190" key="GridCell.Tab.0.center" timestamp="1586095753424">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state width="1341" height="190" key="GridCell.Tab.0.center/41.23.1639.1027@41.23.1639.1027" timestamp="1586095753424" />
+    <state width="1341" height="190" key="GridCell.Tab.0.left" timestamp="1586095753424">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state width="1341" height="190" key="GridCell.Tab.0.left/41.23.1639.1027@41.23.1639.1027" timestamp="1586095753424" />
+    <state width="1341" height="190" key="GridCell.Tab.0.right" timestamp="1586095753425">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state width="1341" height="190" key="GridCell.Tab.0.right/41.23.1639.1027@41.23.1639.1027" timestamp="1586095753425" />
+    <state width="1341" height="238" key="GridCell.Tab.1.bottom" timestamp="1586093227085">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state width="1341" height="238" key="GridCell.Tab.1.bottom/41.23.1639.1027@41.23.1639.1027" timestamp="1586093227085" />
+    <state width="1341" height="238" key="GridCell.Tab.1.center" timestamp="1586093227085">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state width="1341" height="238" key="GridCell.Tab.1.center/41.23.1639.1027@41.23.1639.1027" timestamp="1586093227085" />
+    <state width="1341" height="238" key="GridCell.Tab.1.left" timestamp="1586093227084">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state width="1341" height="238" key="GridCell.Tab.1.left/41.23.1639.1027@41.23.1639.1027" timestamp="1586093227084" />
+    <state width="1341" height="238" key="GridCell.Tab.1.right" timestamp="1586093227085">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state width="1341" height="238" key="GridCell.Tab.1.right/41.23.1639.1027@41.23.1639.1027" timestamp="1586093227085" />
+    <state x="457" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1586186958350">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state x="457" y="369" key="com.intellij.ide.util.TipDialog/41.23.1639.1027@41.23.1639.1027" timestamp="1586186958350" />
+    <state x="610" y="374" width="670" height="676" key="search.everywhere.popup" timestamp="1586093262687">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state x="610" y="374" width="670" height="676" key="search.everywhere.popup/41.23.1639.1027@41.23.1639.1027" timestamp="1586093262687" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/02_matching_brackets.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/02_matching_brackets.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f5ea6d58-e768-4dd6-bbcc-d0bb19ae5034" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../06 Lambdas and build-in functions/Lab/demo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07 File handling/Exercises/01_even_lines.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07 File handling/Exercises/02_line_numbers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07 File handling/Exercises/03_file_manipulator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07 File handling/Exercises/04_directory_traversal/directory_traversal.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07 File handling/Exercises/04_directory_traversal/example/subdirectory/sub_index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07 File handling/Exercises/04_directory_traversal/second_example/some_file.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07 File handling/Exercises/text1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07 File handling/Exercises/text2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07 File handling/Lab/02_file_reader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07 File handling/Lab/03_file_writer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07 File handling/Lab/04_delete_file.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07 File handling/Lab/05_word_count.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08 Modules/Lab/01_calculate_logarithm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08 Modules/Lab/02_ASCII_art.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08 Modules/Lab/03_triangle.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08 Modules/Lab/05_fibonacci_sequence" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08 Modules/Lab/demo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08 Modules/Lab/fibonacci_sequence/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08 Modules/Lab/fibonacci_sequence/sequence.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08 Modules/Lab/print_triangle/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08 Modules/Lab/print_triangle/print_new_triangle..py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08 Modules/playground/play.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08 Modules/playground/sub_play.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../09_Workshop/tic_tac_toe_game/tic_tac_toe.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam prep/17-Feb/02_present_delivery.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam prep/18-Feb/02_book_worm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam prep/23-feb/01B_expression_evaluator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam prep/23-feb/01_expression_evaluator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam prep/23-feb/02B_war_planes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam prep/23-feb/02_war_planes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04 Comprehension/Exercises/01_word_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../04 Comprehension/Exercises/01_word_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04 Comprehension/Exercises/02_words_lengths.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../04 Comprehension/Exercises/02_words_lengths.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04 Comprehension/Exercises/05_diagonals.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../04 Comprehension/Exercises/05_diagonals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04 Comprehension/Exercises/06_palidnrome_matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../04 Comprehension/Exercises/06_palidnrome_matrix.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04 Comprehension/Exercises/07_flatten_lists.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../04 Comprehension/Exercises/07_flatten_lists.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04 Comprehension/Exercises/09_bunker.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../04 Comprehension/Exercises/09_bunker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05 Functions advanced/Exercises/05_function_executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../05 Functions advanced/Exercises/05_function_executor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05 Functions advanced/Exercises/08_recursion_palindrome.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../05 Functions advanced/Exercises/08_recursion_palindrome.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05 Functions advanced/Exercises/09_Recursive_power.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../05 Functions advanced/Exercises/09_Recursive_power.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05 Functions advanced/Lab/06_multiplicatoin_funciton.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../05 Functions advanced/Lab/06_multiplicatoin_funciton.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05 Functions advanced/Lab/07_operator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../05 Functions advanced/Lab/07_operator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05 Functions advanced/Lab/10_combinations.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../05 Functions advanced/Lab/10_combinations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05 Functions advanced/Lab/11_chairs.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../05 Functions advanced/Lab/11_chairs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05 Functions advanced/Lab/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../05 Functions advanced/Lab/demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../06 Lambdas and build-in functions/Exercises/08_negative_vs_positive.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../06 Lambdas and build-in functions/Exercises/08_negative_vs_positive.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../06 Lambdas and build-in functions/Lab/03_even_numbers.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../06 Lambdas and build-in functions/Lab/03_even_numbers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../07 File handling/Exercises/08-File-Handling-Exercise.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../07 File handling/Exercises/08-File-Handling-Exercise.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../07 File handling/Lab/08-File-Handling-Lab-Resources.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../../07 File handling/Lab/08-File-Handling-Lab-Resources.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../07 File handling/Lab/08-File-Handling-Lab.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../07 File handling/Lab/08-File-Handling-Lab.docx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1aAmxd6VKYSB6mxaITkb8jQTM8R" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunManager" selected="Python.08_crossroads">
+    <configuration name="03_maximum_and_minimum_element" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Exercises" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/03_maximum_and_minimum_element.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="04_fast_food" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Exercises" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/PycharmProjects/playground/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04_fast_food.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="08_crossroads" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Exercises" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/08_crossroads.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="09_key_revolver" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Exercises" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/09_key_revolver.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="10_cups_and_bottles" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Exercises" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/10_cups_and_bottles.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.03_maximum_and_minimum_element" />
+      <item itemvalue="Python.04_fast_food" />
+      <item itemvalue="Python.08_crossroads" />
+      <item itemvalue="Python.09_key_revolver" />
+      <item itemvalue="Python.10_cups_and_bottles" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.08_crossroads" />
+        <item itemvalue="Python.10_cups_and_bottles" />
+        <item itemvalue="Python.09_key_revolver" />
+        <item itemvalue="Python.04_fast_food" />
+        <item itemvalue="Python.03_maximum_and_minimum_element" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f5ea6d58-e768-4dd6-bbcc-d0bb19ae5034" name="Default Changelist" comment="" />
+      <created>1586187019709</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586187019709</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="563" y="138" key="#Inspections" timestamp="1586189716341">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state x="563" y="138" key="#Inspections/41.23.1639.1027@41.23.1639.1027" timestamp="1586189716341" />
+    <state x="429" y="134" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586330107289">
+      <screen x="42" y="23" width="1638" height="1027" />
+    </state>
+    <state x="428" y="134" key="#com.intellij.execution.impl.EditConfigurationsDialog/41.23.1639.1027@41.23.1639.1027" timestamp="1586274263282" />
+    <state x="429" y="134" key="#com.intellij.execution.impl.EditConfigurationsDialog/42.23.1638.1027@42.23.1638.1027" timestamp="1586330107289" />
+    <state width="1281" height="235" key="GridCell.Tab.0.bottom" timestamp="1586609221267">
+      <screen x="42" y="23" width="1638" height="1027" />
+    </state>
+    <state width="1581" height="290" key="GridCell.Tab.0.bottom/41.23.1639.1027@41.23.1639.1027" timestamp="1586278714502" />
+    <state width="1281" height="235" key="GridCell.Tab.0.bottom/42.23.1638.1027@42.23.1638.1027" timestamp="1586609221267" />
+    <state width="1281" height="235" key="GridCell.Tab.0.center" timestamp="1586609221266">
+      <screen x="42" y="23" width="1638" height="1027" />
+    </state>
+    <state width="1581" height="290" key="GridCell.Tab.0.center/41.23.1639.1027@41.23.1639.1027" timestamp="1586278714502" />
+    <state width="1281" height="235" key="GridCell.Tab.0.center/42.23.1638.1027@42.23.1638.1027" timestamp="1586609221266" />
+    <state width="1281" height="235" key="GridCell.Tab.0.left" timestamp="1586609221266">
+      <screen x="42" y="23" width="1638" height="1027" />
+    </state>
+    <state width="1581" height="290" key="GridCell.Tab.0.left/41.23.1639.1027@41.23.1639.1027" timestamp="1586278714501" />
+    <state width="1281" height="235" key="GridCell.Tab.0.left/42.23.1638.1027@42.23.1638.1027" timestamp="1586609221266" />
+    <state width="1281" height="235" key="GridCell.Tab.0.right" timestamp="1586609221266">
+      <screen x="42" y="23" width="1638" height="1027" />
+    </state>
+    <state width="1581" height="290" key="GridCell.Tab.0.right/41.23.1639.1027@41.23.1639.1027" timestamp="1586278714502" />
+    <state width="1281" height="235" key="GridCell.Tab.0.right/42.23.1638.1027@42.23.1638.1027" timestamp="1586609221266" />
+    <state width="1281" height="284" key="GridCell.Tab.1.bottom" timestamp="1586444162698">
+      <screen x="42" y="23" width="1638" height="1027" />
+    </state>
+    <state width="1581" height="290" key="GridCell.Tab.1.bottom/41.23.1639.1027@41.23.1639.1027" timestamp="1586278714503" />
+    <state width="1281" height="284" key="GridCell.Tab.1.bottom/42.23.1638.1027@42.23.1638.1027" timestamp="1586444162698" />
+    <state width="1281" height="284" key="GridCell.Tab.1.center" timestamp="1586444162698">
+      <screen x="42" y="23" width="1638" height="1027" />
+    </state>
+    <state width="1581" height="290" key="GridCell.Tab.1.center/41.23.1639.1027@41.23.1639.1027" timestamp="1586278714503" />
+    <state width="1281" height="284" key="GridCell.Tab.1.center/42.23.1638.1027@42.23.1638.1027" timestamp="1586444162698" />
+    <state width="1281" height="284" key="GridCell.Tab.1.left" timestamp="1586444162698">
+      <screen x="42" y="23" width="1638" height="1027" />
+    </state>
+    <state width="1581" height="290" key="GridCell.Tab.1.left/41.23.1639.1027@41.23.1639.1027" timestamp="1586278714503" />
+    <state width="1281" height="284" key="GridCell.Tab.1.left/42.23.1638.1027@42.23.1638.1027" timestamp="1586444162698" />
+    <state width="1281" height="284" key="GridCell.Tab.1.right" timestamp="1586444162698">
+      <screen x="42" y="23" width="1638" height="1027" />
+    </state>
+    <state width="1581" height="290" key="GridCell.Tab.1.right/41.23.1639.1027@41.23.1639.1027" timestamp="1586278714503" />
+    <state width="1281" height="284" key="GridCell.Tab.1.right/42.23.1638.1027@42.23.1638.1027" timestamp="1586444162698" />
+    <state x="468" y="189" key="Registry" timestamp="1586332646040">
+      <screen x="42" y="23" width="1638" height="1027" />
+    </state>
+    <state x="468" y="189" key="Registry/42.23.1638.1027@42.23.1638.1027" timestamp="1586332646040" />
+    <state x="353" y="176" key="SettingsEditor" timestamp="1586332537378">
+      <screen x="42" y="23" width="1638" height="1027" />
+    </state>
+    <state x="352" y="176" key="SettingsEditor/41.23.1639.1027@41.23.1639.1027" timestamp="1586275226735" />
+    <state x="353" y="176" key="SettingsEditor/42.23.1638.1027@42.23.1638.1027" timestamp="1586332537378" />
+    <state x="651" y="305" key="com.intellij.ide.util.TipDialog" timestamp="1586251636717">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state x="651" y="305" key="com.intellij.ide.util.TipDialog/41.23.1639.1027@41.23.1639.1027" timestamp="1586251636717" />
+    <state x="539" y="133" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586190292114">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state x="539" y="133" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/41.23.1639.1027@41.23.1639.1027" timestamp="1586190292114" />
+    <state x="629" y="240" width="670" height="676" key="search.everywhere.popup" timestamp="1586332558122">
+      <screen x="42" y="23" width="1638" height="1027" />
+    </state>
+    <state x="628" y="240" width="670" height="676" key="search.everywhere.popup/41.23.1639.1027@41.23.1639.1027" timestamp="1586254329937" />
+    <state x="629" y="240" width="670" height="676" key="search.everywhere.popup/42.23.1638.1027@42.23.1638.1027" timestamp="1586332558122" />
+  </component>
+</project>

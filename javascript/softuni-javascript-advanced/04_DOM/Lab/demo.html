@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 1</title>
+</head>
+<body>
+    <h1 id="main"></h1>
+    <div id="main-content">
+        <button class="danger">Save</button>
+    </div>
+    <script>
+        //document.getElementById('main').innerHTML = 'tEST1!'; // no hashtag
+        //document.querySelector('#main').innerHTML = 'tEST2!';
+        const el1 = document.getElementsByTagName('h1')[0].innerHTML = 'tEST3!';
+        const el2 = document.querySelector("#main-content button"); // returns the first that finds
+        const el3 = document.querySelectorAll("#main-content .danger")[0];
+        var myDiv = document.createElement('div');
+        myDiv.innerText = 'hello!';
+        document.body.appendChild(myDiv);
+    </script>
+</body>
+</html>

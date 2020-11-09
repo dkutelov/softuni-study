@@ -1,0 +1,2 @@
+from my_main_pkg.hello_from_main import hello_from_main
+from my_main_pkg.my_second_pkg import hello_from_second

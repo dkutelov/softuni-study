@@ -1,0 +1,8 @@
+VOWELS = {'a', 'o', 'u', 'e', 'i'}
+
+text = input()
+
+no_vowels_text = [ch for ch in text if ch.lower() not in VOWELS]
+print(''.join(no_vowels_text))
+
+# better to include upper in VOWELS since ch.lower() can be considered as a hack
