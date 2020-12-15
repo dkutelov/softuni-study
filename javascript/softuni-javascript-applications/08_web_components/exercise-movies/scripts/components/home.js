@@ -1,0 +1,46 @@
+import { html, render } from 'https://unpkg.com/lit-html?module';
+import { getUserData } from '../services/authServices.js';
+import MoviesList from './movies-list.js';
+
+customElements.define('movies-list-component', MoviesList);
+
+const template = ({ isAuthenticated }) => html` <div
+        class="jumbotron jumbotron-fluid text-light"
+        style="background-color: #343a40"
+    >
+        <img
+            src="https://s.studiobinder.com/wp-content/uploads/2019/06/Best-M-Night-Shyamalan-Movies-and-Directing-Style-StudioBinder.jpg"
+            class="img-fluid"
+            alt="Responsive image"
+        />
+        <h1 class="display-4">Movies</h1>
+        <p class="lead">
+            Unlimited movies, TV shows, and more. Watch anywhere. Cancel
+            anytime.
+        </p>
+    </div>
+    ${isAuthenticated
+        ? html`<movies-list-component
+              .isAuthenticated=${isAuthenticated}
+          ></movies-list-component>`
+        : ''}`;
+
+export default class Home extends HTMLElement {
+    // no need of constructor if we do nothing
+    constructor() {
+        super();
+        console.log(getUserData());
+        // bootstrap cant work with shodow dom
+        // this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+        Object.assign(this, getUserData());
+        this.render();
+    }
+
+    render() {
+        render(template(this), this, { eventContext: this });
+        // render(template(), this.shadowRoot);
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            h2 {
+                color: tan;
+            }
+        </style>
+    </head>
+    <body>
+        <app-root name="superman">Some hero description</app-root>
+        <h2>No app component</h2>
+        <app-root name="superman 1"
+            >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa,
+            id!</app-root
+        >
+        <app-root name="superman 2"
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
+            ipsam ea!</app-root
+        >
+
+        <template id="card-template">
+            <style>
+                .card-content {
+                    border: 1px solid gray;
+                    padding: 1em;
+                    width: 400px;
+                }
+            </style>
+            <div class="card-content">
+                <h2>Hello World</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Modi autem accusamus ipsum possimus, porro, totam minus
+                    animi ex sapiente, dolores delectus magni voluptatem
+                    laborum. Corrupti quis optio excepturi perferendis iure?
+                </p>
+                <p><slot></slot></p>
+                <button>details</button>
+            </div>
+        </template>
+
+        <script type="module">
+            class AppRoot extends HTMLElement {
+                constructor() {
+                    super();
+                    this.attachShadow({ mode: 'open' });
+                    // this.shadowRoot.innerHTML = `
+                    //     <style>
+                    //         h2 {
+                    //             color: tomato;
+                    //         }
+                    //     </style>
+                    //     <h2>From Shaddow H2</h2>
+                    // `;
+
+                    // with template
+                    let cardTemplate = document.getElementById('card-template');
+
+                    const cardTmp = cardTemplate.content.cloneNode(true);
+                    cardTmp.querySelector('h2').textContent = this.getAttribute(
+                        'name'
+                    );
+                    this.shadowRoot.appendChild(cardTmp);
+                }
+            }
+            window.customElements.define('app-root', AppRoot);
+
+            // let firstComponent = document.getElementById('first');
+        </script>
+    </body>
+</html>

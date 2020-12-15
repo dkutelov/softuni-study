@@ -1,0 +1,15 @@
+{
+    "name": "shoe_shell",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "lite-server"
+    },
+    "dependencies": {
+        "handlebars": "^4.7.6"
+    },
+    "devDependencies": {
+        "lite-server": "^2.6.1"
+    }
+}

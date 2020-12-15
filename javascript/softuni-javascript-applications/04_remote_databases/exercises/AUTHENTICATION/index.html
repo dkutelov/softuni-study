@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    </head>
+    <body>
+        <h1>Firebase Auth Demo</h1>
+        <div>
+            <span>User status</span>
+            <span id="user-status"></span>
+        </div>
+        <div>
+            <button id="logout-button">Logout</button>
+        </div>
+        <div id="error"></div>
+        <h1>Register</h1>
+        <form class="register-form">
+            <div class="container">
+                <label for="user-email"><b>Email</b></label>
+                <input
+                    type="text"
+                    id="user-email"
+                    placeholder="Enter Email"
+                    required
+                />
+
+                <label for="user-password"><b>Password</b></label>
+                <input
+                    type="password"
+                    id="user-password"
+                    placeholder="Enter Password"
+                    required
+                />
+
+                <button type="submit" id="register-button">Register</button>
+            </div>
+        </form>
+
+        <h1>Login</h1>
+        <form class="login-form">
+            <div class="container">
+                <label for="login-user-email"><b>Email</b></label>
+                <input
+                    type="text"
+                    id="login-user-email"
+                    placeholder="Enter Email"
+                    required
+                />
+
+                <label for="login-user-password"><b>Password</b></label>
+                <input
+                    type="password"
+                    id="login-user-password"
+                    placeholder="Enter Password"
+                    required
+                />
+
+                <button type="submit" id="login-button">Login</button>
+            </div>
+        </form>
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: 'AIzaSyAqiGcxN7R4jQr6OUwGaLcNCk7xzyhWxNA',
+                authDomain: 'books-exercise-3578d.firebaseapp.com',
+                databaseURL: 'https://books-exercise-3578d.firebaseio.com',
+                projectId: 'books-exercise-3578d',
+                storageBucket: 'books-exercise-3578d.appspot.com',
+                messagingSenderId: '594232802334',
+                appId: '1:594232802334:web:e9a5d1559941a3d4d5820f',
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
+        <script src="auth.js"></script>
+    </body>
+</html>

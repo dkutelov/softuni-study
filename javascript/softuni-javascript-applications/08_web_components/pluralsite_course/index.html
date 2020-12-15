@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="posts"></div>
+
+        <script type="module" src="app.js"></script>
+    </body>
+    <template id="post">
+        <div class="wrapper">
+            <h2>Title:</h2>
+            <p>Content:</p>
+            <p>Date:</p>
+            <p>Author:</p>
+        </div>
+    </template>
+
+    <template id="header">
+        <h1>Header</h1>
+        <template id="body">
+            <p>Body</p>
+        </template>
+    </template>
+</html>

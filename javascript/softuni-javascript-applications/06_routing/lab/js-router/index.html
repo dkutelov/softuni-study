@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Hellow World!</h1>
+
+        <div id="nav-links">
+            <span id="home">Home</span>
+            <span id="about">About</span>
+            <span id="contact">Contact</span>
+        </div>
+
+        <div id="root"></div>
+        <!-- <button>This text will be overwritten</button> -->
+        <script>
+            const root = document.getElementById('root');
+            const linksEl = document.getElementById('nav-links');
+            const baseURL = 'push-based.html/';
+            const router = {
+                home: '<h2>Home... </h2>',
+                about: '<h2>About us ... </h2>',
+                contact: '<h2>Contact us ... </h2>',
+            };
+
+            linksEl.addEventListener('click', onNavigationClick);
+
+            function onNavigationClick(e) {
+                e.preventDefault();
+                const url = e.target.id;
+                history.pushState({ url }, null, url);
+                const popEvent = new CustomEvent('popstate');
+                popEvent.state = { url };
+                window.dispatchEvent(popEvent);
+            }
+
+            window.onpopstate = function (event) {
+                console.log(history);
+                let url;
+                if (event.state) {
+                    url = event.state.url;
+                } else {
+                    url = 'home';
+                }
+                render(url);
+            };
+
+            // // Set initial state and render app for the first time
+            (function initialize() {
+                render('home');
+            })();
+
+            function render(url) {
+                const currentHTML = router[url];
+                root.innerHTML = currentHTML;
+            }
+            // const router = {
+            //     '/home': '<h2>Home... </h2>',
+            //     '/about': '<h2>About us ... </h2>',
+            //     '/contact': '<h2>Contact us ... </h2>',
+            // };
+
+            // // pushState does not trigger popstate
+            // window.addEventListener('popstate', (e) => {
+            //     root.innerHTML = router[location.pathname] || 'Not found';
+            // });
+
+            // document.getElementById('change').addEventListener('click', () => {
+            //     // window.history.pushState({ data: 'something' }, '', 'about');
+            //     window.history.pushState(
+            //         { number: history.length },
+            //         '',
+            //         `page-${history.length}`
+            //     );
+            //     console.log(history.state);
+            // });
+
+            // const button = document.querySelector('button');
+            // let state = {
+            //     buttonText: 'Initial text',
+            // };
+            // // Change the look of your app based on state
+            // function render() {
+            //     button.innerText = state.buttonText;
+            // }
+            // // Set initial state and render app for the first time
+            // (function initialize() {
+            //     window.history.replaceState(state, null, '');
+            //     console.log(location);
+            //     render(state);
+            // })();
+            // // Update state, history, and user interface
+            // function handleButtonClick() {
+            //     state.buttonText = 'I clicked the button!';
+            //     console.log(location);
+            //     window.history.pushState(
+            //         state,
+            //         null,
+            //         `${location.origin}/clicked-button`
+            //     );
+            //     render(state);
+            // }
+            // // Connect your button to the handler above to trigger on click
+            // button.addEventListener('click', handleButtonClick);
+            // // Tell your browser to give you old state and re-render on back
+            // window.onpopstate = function (event) {
+            //     if (event.state) {
+            //         state = event.state;
+            //     }
+            //     render(state);
+            // };
+        </script>
+    </body>
+</html>

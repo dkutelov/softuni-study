@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+    </head>
+    <body>
+        <div id="container"></div>
+    </body>
+    <script type="module">
+        import articles from './articles.js';
+        const containerElement = document.getElementById('container');
+        const articleView =
+            '<div>{{title}} - {{ content }} - {{ author}}</div>';
+        const articleTemplate = Handlebars.compile(articleView);
+        const articlesHTML = articles
+            .map((article) => articleTemplate(article))
+            .join('');
+        containerElement.innerHTML = articlesHTML;
+    </script>
+</html>

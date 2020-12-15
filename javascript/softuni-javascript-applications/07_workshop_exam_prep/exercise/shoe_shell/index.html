@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/public/styles.css" />
+        <link rel="icon" type="image/png" href="/public/favicon.png" />
+        <base href="/" />
+        <title>Shoe Shelf</title>
+    </head>
+
+    <body>
+        <div id="errors" class="notification" display:none;></div>
+        <div id="info" class="notification" display:none;></div>
+        <div id="root"></div>
+        <script type="text/x-handlebars-template" id="navigation-template">
+            <header>
+                <nav onclick='navigationHandler(event);'>
+                    <ul>
+                        {{#if isAuthenticated}}
+                            <li>
+                                <a href='/create'>
+                                    Create new offer
+                                </a>
+                            </li>
+                        {{else}}
+                            <li class='site-logo'>
+                                Shoe
+                            </li>
+                        {{/if}}
+                        <li>
+                            <a href='/home' class='home-link'>
+                                <img src='/public/sneakers.png' alt='' />
+                            </a>
+                        </li>
+                        {{#if isAuthenticated}}
+                            <li>
+                                Welcome, {{email}} |
+                                <a href='/logout'>
+                                    Logout
+                                </a>
+                            </li>
+                        {{else}}
+                            <li class='site-logo'>
+                                Shelf
+                            </li>
+                        {{/if}}
+                    </ul>
+                </nav>
+            </header>
+        </script>
+        <script type="text/x-handlebars-template" id="home-template">
+            {{>nav-template}}
+            <main>
+                {{#if isAuthenticated}}
+                <div class='shoes'>
+                    {{#each products}}
+                        {{>offer-card-template}}
+                     {{else}}
+                            <h1>No shoes to display. Be the first to create a new offer ...</h1>
+                    {{/each}}
+                </div>
+                {{else}}
+                <div class='container'>
+                    <div class='about-us'>
+                        <div>
+                            <img src='../public/shoes.jpg' alt='' />
+                            <img src='../public/shoes2.jpg' alt='' />
+                        </div>
+                        <p>
+                            <a href='/register' onclick='navigationHandler(event);'>
+                                Register Now
+                            </a>
+                            and Try it!
+                        </p>
+                    </div>
+                </div>
+                {{/if}}
+            </main>
+        </script>
+        <script type="text/x-handlebars-template" id="offer-create-template">
+            {{>nav-template}}
+            <main>
+                <h1>
+                    Create New Offer
+                </h1>
+                <p class='message'></p>
+                <form id="offer-create-form" onsubmit="onCreateOffer(event);">
+                    <div>
+                        <input type='text' placeholder='Name...' name="name"/>
+                    </div>
+                    <div>
+                        <input type='text' placeholder='Price...' name="price"/>
+                    </div>
+                    <div>
+                        <input type='text' placeholder='Image url...' name="imageURL"/>
+                    </div>
+                    <div>
+                        <textarea
+                            placeholder='Give us some description about this offer...' name="description"
+                        ></textarea>
+                    </div>
+                    <div>
+                        <input type='text' placeholder='Brand...' name="brand"/>
+                    </div>
+                    <div>
+                        <button>
+                            Create
+                        </button>
+                    </div>
+                </form>
+            </main>
+        </script>
+        <script type="text/x-handlebars-template" id="offer-detail-template">
+            {{>nav-template}}
+            <main>
+                <div class='offer-details'>
+                    <h1>{{name}}</h1>
+                    <div class='info'>
+                        <img
+                            src='{{imageURL}}'
+                            alt='{{name}}'
+                        />
+                        <div class='description'>
+                            {{description}}
+                            <br />
+                            <br />
+                            <p>Buyers: {{purchaseCount}}</p>
+                            <br />
+                            <p class='price'>
+                                ${{price}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class='actions'>
+                        {{#if isCreator}}
+                        <a href='detail/{{offerId}}/edit' onclick="navigationHandler(event);">
+                            Edit
+                        </a>
+                        <a onclick="onDeleteOffer(event, '{{offerId}}');">
+                            Delete
+                        </a>
+                        {{/if}}
+
+                        {{#unless isCreator}}
+
+                        {{#if isPurchased}}
+                        <span>
+                            You bought it
+                        </span>
+                        {{else}}
+                        <a onclick="onBuy(event,'{{offerId}}')">
+                            Buy
+                        </a>
+                        {{/if}}
+                        {{/unless}}
+                    </div>
+                </div>
+            </main>
+        </script>
+        <script type="text/x-handlebars-template" id="offer-card-template">
+            <div class='shoe'>
+                <img src='{{imageURL}}' />
+                <h3>
+                    {{name}}
+                </h3>
+                <a
+                    href='/detail/{{productId}}'
+                    onclick='navigationHandler(event);'
+                >
+                    Buy it for ${{price}}
+                </a>
+            </div>
+        </script>
+        <script type="text/x-handlebars-template" id="offer-edit-template">
+            {{>nav-template}}
+            <main>
+                <h1>
+                    Edit Offer
+                </h1>
+                <p class='message'></p>
+                <form id="offer-edit-form" onsubmit="onEditOffer(event, '{{offerId}}')">
+                    <div>
+                        <input type='text' placeholder='Name...' value='{{name}}' name='name'/>
+                    </div>
+                    <div>
+                        <input type='text' placeholder='Price...' value='{{price}}' name='price'/>
+                    </div>
+                    <div>
+                        <input type='text' placeholder='Image url...' value='{{imageURL}}' name='imageURL'/>
+                    </div>
+                    <div>
+                        <textarea
+                            placeholder='Give us some description about this offer...' name='description'
+                        >{{description}}</textarea>
+                    </div>
+                    <div>
+                        <input type='text' placeholder='Brand...' value='{{brand}}' name='brand'/>
+                    </div>
+                    <div>
+                        <button>
+                            Edit
+                        </button>
+                    </div>
+                </form>
+            </main>
+        </script>
+        <script type="text/x-handlebars-template" id="user-login-template">
+            {{>nav-template}}
+            <main>
+                <h1>
+                    Login
+                </h1>
+                <p class='form-info'>
+                    Don't have account?
+                    <a href='/register' onclick='navigationHandler(event);'>
+                        Register now
+                    </a>
+                    and fix that!
+                </p>
+                <form id="login-form" onsubmit="onLoginSubmit(event);">
+                    <div>
+                        <input type='email' placeholder='Email...' name="email"/>
+                    </div>
+
+                    <div>
+                        <input type='password' placeholder='Password...' name="password"/>
+                    </div>
+                    <div>
+                        <button>
+                            Login
+                        </button>
+                    </div>
+                </form>
+            </main>
+        </script>
+        <script type="text/x-handlebars-template" id="user-register-template">
+            {{>nav-template}}
+            <main>
+                <h1>
+                    Register
+                </h1>
+                <p class='form-info'>
+                    Already registered?
+                    <a href='/login' onclick='navigationHandler(event);'>
+                        Login now
+                    </a>
+                    and have some fun!
+                </p>
+
+                <form id='register-form' onsubmit='onRegisterSubmit(event);'>
+                    <div>
+                        <input
+                            type='email'
+                            placeholder='Email...'
+                            name='email'
+                        />
+                    </div>
+                    <div>
+                        <input
+                            type='password'
+                            placeholder='Password'
+                            name='password'
+                        />
+                    </div>
+                    <div>
+                        <input
+                            type='password'
+                            placeholder='Re-password'
+                            name='repassword'
+                        />
+                    </div>
+                    <div>
+                        <p class='message'></p>
+                        <button>
+                            Register
+                        </button>
+                    </div>
+                </form>
+            </main>
+        </script>
+        <footer>
+            <p>
+                <a href="https://softuni.bg">Software University</a> - JS
+                Applications @ 2020
+            </p>
+        </footer>
+        <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+        <script src="./scripts/firebase.js"></script>
+        <script src="./node_modules/handlebars/dist/handlebars.min.js"></script>
+        <script src="./scripts/utils.js"></script>
+        <script src="./scripts/router.js"></script>
+        <script src="./scripts/services.js"></script>
+        <script src="./scripts//controller.js"></script>
+        <script src="./scripts/app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Books</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <button id="load-books">LOAD ALL BOOKS</button>
+    <div class="error-notification"></div>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Isbn</th>
+                <th>Tags</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div class="error-notification"></div>
+    <div class="forms-wrapper">
+        <div>
+            <form id="create-form">
+                <h3>NEW BOOK</h3>
+                <label>TITLE</label>
+                <input type="title" id="create-title" placeholder="Title...">
+                <label>AUTHOR</label>
+                <input type="title" id="create-author" placeholder="Author...">
+                <label>ISBN</label>
+                <input type="title" id="create-isbn" placeholder="Isnb...">
+                <label>Tags (pres control to select multiple)</label>
+                <select multiple id="create-book-tags"></select>
+                <button id="submit-button">Submit</button>
+            </form>
+
+            <form id="edit-form">
+                <h3>EDIT BOOK</h3>
+                <label>TITLE</label>
+                <input type="title" id="edit-title" placeholder="Title...">
+                <label>AUTHOR</label>
+                <input type="title" id="edit-author" placeholder="Author...">
+                <label>ISBN</label>
+                <input type="title" id="edit-isbn" placeholder="Isnb...">
+                <label>Tags (pres control to select multiple)</label>
+                <select multiple id="edit-book-tags"></select>
+                <button id="edit-button">Edit</button>
+            </form>
+
+            <form id="delete-form">
+                <h3>DELETE BOOK</h3>
+                <label>TITLE</label>
+                <input type="title" id="delete-title" disabled>
+                <label>AUTHOR</label>
+                <input type="title" id="delete-author"disabled>
+                <label>ISBN</label>
+                <input type="title" id="delete-isbn" disabled>
+                <button id="delete-button">Delete</button>
+            </form>
+        </div>
+        <div>
+            <ul id="tags">
+            </ul>
+            <form id="create-tag-form">
+                <h3>NEW TAG</h3>
+                <label for="create-tag">Tag name</label>
+                <input type="text" id="create-tag" placeholder="Tag...">
+                <button id="tag-submit-button">Create</button>
+            </form>
+
+            <form id="edit-tag-form">
+                <h3>EDIT TAG</h3>
+                <label for="edit-tag">Tag name</label>
+                <input type="text" id="edit-tag" placeholder="Tag...">
+                <button id="edit-tag-button">Edit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+<!--Feel free to change/update/modify the HTML Structure-->
