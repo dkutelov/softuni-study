@@ -1,0 +1,809 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2577
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red161\green0\blue63;\red64\green118\blue25;\red15\green57\blue175;
+\red253\green139\blue9;\red21\green93\blue255;\red46\green0\blue141;\red75\green0\blue240;\red0\green0\blue0;
+\red117\green117\blue117;\red251\green0\blue7;\red149\green149\blue149;\red21\green93\blue255;\red46\green0\blue141;
+\red38\green38\blue38;}
+{\*\expandedcolortbl;;\cssrgb\c69983\c8943\c31331;\cssrgb\c30912\c52771\c12623;\cssrgb\c6238\c31382\c74150;
+\cssrgb\c100000\c61456\c0;\cssrgb\c8872\c47049\c100000;\cssrgb\c24324\c6455\c62064;\cssrgb\c37152\c9588\c95573;\cssrgb\c0\c0\c0;
+\cssrgb\c53231\c53231\c53231;\cssrgb\c100000\c12195\c0;\cssrgb\c65058\c65058\c65058;\cssrgb\c8872\c47049\c100000;\cssrgb\c24324\c6455\c62064;
+\cssrgb\c19912\c19912\c19912;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh20660\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs48 \cf2 01 Introduction to Node
+\fs28 \cf0 \
+\
+- Node is runtime environment for JS not framework\
+- Node is using Chrome V8 engine\
+- Asynchronous and Event Driven\
+- Node is fast\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Event loop\cf0 \
+- endless cycle that is waiting for tasks\
+- it works on one thread - single threaded\
+- FIFO\
+- event loop delegates to OS when response comes it returns the result\
+- does not guarantee the order of execution\
+\
+\cf3 Call stack\cf0 \
+- it is a stack where functions are staffed on each other\
+\
+\
+\cf3 Modules\cf0 \
+- use common JS syntax\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 module.exports = myModule\cf0 \
+- each module has own context and can not pollute global scope\
+- core, local, 3rd party\
+- Node build in\
+\cf5 http, url, querystring, path, fs\cf0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 URL module\cf0 \
+Parses an address with the parse() function\
+Returns an object with info about the url\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 const url = require('url');\
+let urlObj = url.parse(req.url);\cf0 \
+- creates an object\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 Path\cf0  - includes query string\
+\cf6 Pathname \cf0 - address after / `without query string\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 Href\cf0  - full address\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 Query\cf0  - string after ?\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 Search\cf0  - string including ?\
+\
+- url.parse is depreciated, should use new URL()\
+- new URL requires full url:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 const urlObj = new URL(`http://localhost:5000$\{req.url\}`);\
+->:\
+href: 'http://localhost:5000/content/images/cat-1.jpg?name=dari',\
+pathname: '/content/images/cat-1.jpg',\
+search: '?name=dari',\
+searchParams: URLSearchParams \{ 'name' => 'dari' \},\cf0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Path module\cf0 \
+- normalise: resolves ./ ../ etc\
+- join : to build path\
+- __dirname : full root path\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6   const fileName = path.normalize(\
+      path.join(__dirname, "../views/home/index.html")\
+    );\cf0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Querystring module\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 const queryString = require('querystring');\
+const qs = querystring.parse('year=2017&month=february')\cf0 \
+- we can access\
+\cf6 Qs.year\
+Qs.month\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Web server\cf0 \
+- software that is listening to and handling web requests and sending responses\
+\
+- use http module\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 http.createServer\cf0 \
+- returns the server and we can use \cf6 listen\cf0 \
+\cf6 const http = require("http");\
+\
+function requestHandler(req, res) \{\
+  console.log("hi");\
+\}\
+\
+const app = http.createServer(requestHandler);\
+app.listen(5000);\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+- runs until we stop it\
+- standard ports: http 80, https 443\
+- we can add to the response object with write but we need to end()\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 function requestHandler(req, res) \{\
+  res.write("Hello World!");\
+  res.end();\
+\}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs48 \cf2 02 Node streams and utilities
+\fs28 \cf0 \
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Publish-Subscribe pattern (pubsub)\cf0 \
+\
+- takes over the communication b/w 2 components, stays in the middle -> Event Bus\
+- Sender/ Publishers - send the message\
+- Receivers/ Subscribers - receives the message\
+- these are not linked directly\
+\
+\
+\cf3 Module Events\cf0 \
+\
+- pub sub is implement in node with events\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 const events = require(\'91events\'92)\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 let eventEmitter = new events.EventEmitter();\
+eventEmitter.on(\'91click\'92, (name) => \{\})\
+eventEmitter.emit(\'91click\'92, \'91dari\'92)\cf0 \
+\
+Events are not asynchronous\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Streams\cf0 \
+\
+Collections of data that is not available at once, data may come continuously in chunks\
+\
+Types\
+\uc0\u9679  \cf5 Readable\cf0  - can only be read (process.stdin)\
+\uc0\u9679  \cf5 Writeable\cf0  - can only be written to (process.stdout)\
+\uc0\u9679  \cf5 Duplex\cf0  - both Readable and Writeable (TCP sockets)\
+\uc0\u9679  \cf5 Transform\cf0  - the output is computed from the input (zlib, crypto)\
+\
+- console.log no new line\
+process.stdout.write('abc');process.stdout.write('def');\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf7 Readable Stream\cf0 \
+Functions\
+\uc0\u9679  \cf6 read()\cf0  - get chunks from the stream \
+\uc0\u9679  \cf6 resume()\cf0  - switch to flowing mode \
+\uc0\u9679  \cf6 pause()\cf0  - switch to paused mode\
+\
+Events \
+- used when the stream is flowing \
+\uc0\u9679  \cf6 data\cf0  - new chunk is available for reading\
+\uc0\u9679  \cf6 end\cf0  - no more data\
+\uc0\u9679  \cf6 error\cf0  - an exception has occurred\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf8 Writable Stream\cf0 \
+Functions\
+\uc0\u9679  write() - send chunks to the stream \
+\uc0\u9679  end() - close the stream\
+\
+Piping Streams\
+\uc0\u9679  The pipe() function allows a readable stream to output directly to a writable stream\
+\uc0\u9679  Event listeners are automatically added\
+\
+\
+- request and response are streams\
+\
+readSream.pipe(res)\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 FS module\cf0 \
+\
+- read file synchronous\
+- reading files is very slow compared to the other operation and \
+- sync blocks the script until file is red\
+\
+let data = fs.readFileSync(\'91path to file\'92, \{ encoding: \'91utf8\'92\})\
+res.write(data)\
+res.end()\
+\
+\
+fs.readFile(\'91path\'92, \'91utf8\'92, (err, data) => \{\
+	if (err) \{\
+		return res.end()\
+	\}\
+	// reads the whole file and then writes it\
+	res.write(data);\
+	res.end();\
+\
+\})\
+\
+- with promise\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 function readFileAsync(path) \{\
+	return new Promise((resolve, reject) => \{\
+		fs.readFile(path, (err, data) => \{\
+			if (err) \{\
+				return reject(err);\
+			\}\
+\
+			resolve(data);\
+		\})\
+	\})\
+\}\cf0 \
+\
+\cf6 readFileAsync(path)\
+	.then(data => \{\
+		res.write(data);\
+		res.end();\
+\})\
+	.catch(err => \{ console.log(err)\})\cf0 \
+\
+- easier way to convert to promise\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 const util = require(\'91util\'92)\
+const readFileAsync = util.promisify(fs.readFile)\cf0 \
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 fs.mkdir(\'91./demo\'92, (err) => \{\});\
+fs.mkdirSync(\'91./demo\'92)\
+\
+fs.rename(\'91./oldname\'92, \'91./newname\'92, err => \{\});\cf0 \
+\
+\
+\cf6 fs.writeFile(filePath, data, err => \{\})\cf0 \
+\
+- delete file\
+\cf6 Fs.unlink(path, err => \{\})\cf0 \
+\
+- delete dir\
+\cf6 fs.rmdir(path, err => \{\})\cf0 \
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs48 \cf2 03 Introduction to Express
+\fs28 \cf0 \
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Handling request\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf7 app.METHOD(PATH, HANDLER);\cf6 \
+app.get(path, (req, res) => \{\})\
+app.get(\'91/\'91, (req, res) => \{\})\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 app.post(\'91/\'92, (req, res) => \{\})\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf9 - all methods:\cf6 \
+app.all(\'91/about\'92, (req, res) => \{\})\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Sending data\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 - for status; does not ends the request\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 res.status(200); \cf9 // get ok\cf0 \
+\cf4 res.status(201); \cf9 // created\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+- use 
+\fs36 \cf8 res.send()
+\fs28 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 res.send(\'93Hello, world!\'94);\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 - use 
+\fs36 \cf8 res.json()
+\fs28 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 res.json([\'91cat1\'92, \'91cat2\'92]);\cf0 \
+\
+\
+- end the request if not using res.send()\
+\cf4 res.end()\cf0 \
+\
+! We can chain since status returns the response\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 res.status(201).send(\'91Created\'92)\cf0 \
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Routing\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf10 https://expressjs.com/en/guide/routing.html\cf0 \
+\
+- works from top to bottom and executes the first that meets the criteria\
+- routes are chain able since all return app when we use app.route()\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf7 Route parameters\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf9 - use / and :\
+- get with \cf11 req.params\cf6 \
+app.get('/users/:userId/books/:bookId', function (req, res) \{\
+  res.send(req.params)\
+\})\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 - it is obj: \{userId: \'91123\'92, bookId: \'91456\'92 \}\
+- always string\
+- inline validating but does sends a res\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 :bookId(\\\\d+)\cf0 \
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf7 Special path symbols\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 \'91*\'92\cf0  - match all\
+\cf6 \'91/*/cats\'92\cf0  - anything / cats\
+\cf6 \'91/*cats\'92\cf0  - end of cats\
+- ? after symbol makes it optional (ab)? Like group\
+- /regex/ - no \'91\'92\
+\cf6 /.*fly$/\cf0 \
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf8 Route method\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 app.route(\'91/home\'92)\
+	.get((req, res) => \{\})\
+	.post((req, res) => \{\})\cf0 \
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf8 Download file from the browser\cf0 \
+- get 200 ok\
+- \cf12 Content-Disposition: attachment; filename=\'93home.html\'94\cf0 \
+means the browser has to download the file\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 app.get("/\cf11 download\cf6 ", (req, res) => \{\
+  res.download("./views/home.html");\
+\});\cf0 \
+- does not change the route\
+- /attachment does not end, so we can redirect and end\
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf8 Redirect\cf0 \
+- automatically redirects\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 res.redirect(\'91/\'91)\cf0 \
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf8 Render\cf0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 res.sendFile(AbsulutePath)\cf0  - sends the file to the browser and renders it, but path need to be absolute\
+\cf6 res.sendFile(RelativePath, \{ root: __dirname \})\cf0 \
+- MEME types are automatically detected\
+\
+- automatically redirects\
+\cf6 res.redirect(\'91/\'91)\cf0 \
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Middleware\cf0 \
+\
+- function that modifies the request\
+Next -> next middleware in the chain\
+\
+- pass middleware before the action as reference\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 app.get("/cats/:id?", checkCatIdMiddleware, (req, res) => \{\});\cf0 \
+\
+- application level\
+\cf6 app.use(checkCatIdMiddleware);\cf0 \
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Static files\cf0 \
+\
+- use static method that returns the middleware\
+- need to provide a path for the folder\
+- select folder for static e.g. public\
+\
+Default\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 app.use(express.static(\'91public\'92)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 We access the file directly\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 http://localhost:5000/cat-1.jpg\cf0 \
+\
+or\cf6 \
+app.use(\'91/static\'92, express.static(\'91public\'92)\cf0 \
+or\cf6 \
+app.use(\'91/static\'92, express.static(__dirname + \'91public\'92)\cf0 \
+\
+- if we put index.html in public it will automatically load it since  static is before \'91/\'91 handler\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Templating\cf0 \
+\
+- install module\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 npm install express-handlebars\cf0 \
+\
+- add to express\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 const handlebars = require('express-handlebars');\
+app.engine(\
+  "handlebars",\
+  handlebars(\{\
+    extname: ".hbs",\
+  \})\
+);\
+\
+app.set("view engine", "handlebars");\cf0 \
+\
+\
+- node and express can read json but needs to be with the extension\
+Const cats = require(\'91cats.json\'92);\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 Body-parser\cf0 \
+\
+- part of express and we do not need to install\
+- for forms:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6  app.use(bodyParser.urlencoded(\{ extended: false \}));\cf0 \
+\
+- for json:\
+\cf6  app.use(bodyParser.json());\cf0 \
+\
+- new express\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf13 app.use(express.urlencoded(\{ extended: true \}));\cf0 \
+- extended is for nested arrays and objects\
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs48 \cf2 04 Mongo/ Mongoose
+\fs28 \cf0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf11 - DB backup for my projects !!!\
+- do not get data that you do not need, use projection, select\cf0 \
+\
+- mongo db driver - connect node js with mongo db\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 const mongodb = require('mongodb');\
+const MongoClient = mongodb.MongoClient;\cf0 \
+\cf6 const uri = 'mongodb://localhost:27017';\cf0 \
+// create instance\
+\cf6 const client = new MongoClient(connectionStr, \
+	\{ useUnifiedTopology: true \}\
+); \cf0 \
+\
+\cf6 client.connect((err) => \{\
+	if (err) \{\
+		console.log(err);\
+		return;\
+	\}\
+\
+	const db = client.db('testdb');\
+	const people = db.collection('people');\
+\
+	people.insertOne(\{ 'name': 'Ivan' \}, (err, result) => 		\{ \
+			people\
+				.find(\{ name: 'Ivan' \})\
+				.toArray((err, data) => \{\
+						console.log(data); \});\
+	\}); \
+\});\cf0 \
+\
+\
+- findOne\
+\cf6 people.findOne(\{name:\'94dari\'94\}, (err, result)=> \{\
+\
+	if (err) \{\
+		console.log(err);\
+		return;\
+	\}\
+\
+	console.log(result)\
+\})\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+- use chaining promises\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 client.connect()\
+	.then( res => \{\
+		const db = client.db('testdb');\
+		const people = db.collection('people');\
+\
+		return cats.findOne(\{\});\
+\
+	\})\
+	.then( person => console.log(person) \
+)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\
+- async wait\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 async function run() \{\
+	await client.connect();\
+	const db = client.db('testdb');\
+	const people = db.collection('people');\
+\
+	let person = await people.findOne(\{\});\
+	console.log(person);\
+\}\cf0 \
+\
+\
+\
+- use toArray for find(\{\})\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs36 \cf8 Mongoose
+\fs28 \cf0 \
+\
+- ORM - object relational mapping\
+- ODM - object document model\
+\
+Mongoose is ODM\
+\
+- check for errors and if connection is successful\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 const db = mongoose.connection;\
+db.on(\'91error\'92, console.error.bind(console, \'91connection error\'92));\
+db.once(\'91open\'92, () => \{ console.log(\'91connected to db\'92 \});\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+Schema\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 const personSchema = new mongoose.Schema(\{\
+	name: String,\
+	age: Number,\
+\}, \
+	\{ toJSON: \{ virtuals: true \} \}\
+)\
+\
+module.exports = mongoose.model(\'91Person\'92, personSchema\'92)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 - includes virtual properties in json response\
+\
+\
+Create\cf6 \
+person.save((err, res) => \{\
+	if (err) \{\
+		console.log(err);\
+		return;\
+	\}\
+\
+	console.log(res);\
+\})\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf9 Or chain promise\cf6 \
+\
+person.save().then(res => console.log(res))\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\
+Methods (for computed properties)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 const studentSchema = new mongoose.Schema(\{...\});\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf9 - can not use arrow functions for this to work; should be anonymous\cf6 \
+studentSchema\cf2 .methods.getInfo\cf6  = function() \{ return `I am $	\{this.firstName\} $\{this.lastName\}`;\
+\};\cf0 \
+ \
+Virtual properties with getter and setter (like computed properties)\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 personSchema.virtual(\'91birthYear\'92).get(function() \{\
+	return // current year - age\
+\})\
+\
+studentSchema.virtual('fullName').get(function () \{ return 	this.firstName + ' ' + this.lastName\
+\});\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0  \
+Validation with path method\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 studentSchema.path('firstName') .validate(function () \{\
+	return this.firstName.length >= 2 && this.firstName.length <= 10\
+\}, 'First name must be between 2 and 10 symbols long!')\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf3 CRUD\cf0 \
+\
+- create\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 new Person.save()\cf0 \
+\
+- read\
+\cf6 Person.find(\{\}).then(people => \{\
+	people.forEach(person => person.getInfo()\
+\})\cf0 \
+- returns an array, no cursor and need to use toArray();\
+\
+\
+- update\
+\cf6 Student.findById(id, callback)\
+Student.findById(id).then((person) => \{\
+	person.name = \'92New Name\'92;\
+	person.save();\
+\});\cf0 \
+\
+\
+Student\
+	.findByIdAndUpdate(id, \{$set: \{prop: newVal\}\}, callback)\
+\
+\
+\cf6 Student\
+	.updateOne(\{_id: id\}, \{$set: \{propertyName: newValue\}\})\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 - updateMany, do not use update\
+\
+\
+- delete (Remove data)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 Student.findByIdAndRemove(id, callback) Student.remove(\{name: studentName\})\cf0 \
+ \
+Or\
+\cf4 .where(\{ conditionOne: true \})\
+.or(\{ conditionTwo: true \})\cf0 \
+\
+\cf4 Student.find(\{\}).where('age').gt(7).lt(14)\
+Student.find(\{\}).where('facultyNumber').equals('12399')\cf0 \
+- can use also mongo native\
+\{$or:[conditionOne:true, conditionTwo: true]\}\
+\
+\
+- Select only some fields, Projection\
+\cf4 Student.findOne(\{'lastName':'Kirilov'\}).select('name age')\cf0 \
+\
+Person.find(\{\}).select(\'91name\'92);\
+\
+\
+Sort\
+\cf4 Student.find(\{\}).sort(\{age:-1\})\cf0 \
+\
+Limit and skip\
+\cf4 Student.find(\{\}).sort(\{age:-1\}).skip(10).limit(10)\cf0 \
+\
+\
+Chaining\
+\cf4 Student.find(\{\})\
+	.where('firstName').equals('gosho')\
+	.where('age').gt(18).lt(65)\
+	.sort(\{age:-1\})\
+	.skip(10)\
+	.limit(10)\cf0 \
+\
+\
+Count\
+\
+\cf4 async function run() \{\
+	let count = await Person.countDocuments();\
+\}\cf0 \
+\cf4 Student\
+    .countDocuments(\{ age: \{ $gt: 19 \} \})\
+    .then(console.log)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\
+Populate\
+- connect two schemas\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 const studentSchema = new mongoose.Schema(\{\
+  name: String,\
+  age: Number,\
+  facultyNumber: String\
+  teacher: \{ type: Schema.Types.ObjectId, ref: 'Teacher' \}\
+  subjects: [\{ type: Schema.Types.ObjectId, ref: 'Subject' \}]\
+\});\
+\
+const subjectSchema = new mongoose.Schema(\{\
+  title: String,\
+  students: [\{ type: Schema.Types.ObjectId, ref: 'Student' \}]\
+\});\
+\
+const Student = mongoose.model('Student', studentSchema);\
+const Subject = mongoose.model('Subject', subjectSchema);\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+-\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 Student.findOne(\{ name: 'Peter' \})\
+  .populate('subjects')\
+  .then(student => \{\
+     console.log(student.subjects)\uc0\u8232    \})\
+\
+Student.findOne(\{ name: 'Peter' \})\
+   .populate('subjects')\
+   .populate('teacher')\
+   .then(student => \{\
+      console.log(student.teacher)\
+      console.log(student.subjects)\uc0\u8232    \})\
+\
+Subject.\
+  find(\{\})\
+  .populate(\{\
+    path: 'students',\
+    \cf14 match\cf6 : \{ age: \{ $gte: 19 \}\},\
+    select: 'name facultyNumber',\
+    options: \{ limit: 3 \}\
+  \})\cf0 \
+https://mongoosejs.com/docs/populate.html\
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs48 \cf2 05 Workshops
+\fs28 \cf0 \
+\
+\'97 validate inputs \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf13 router.post("/create", (req, res) => \{\
+\cf15   // Validate inputs here\cf13 \
+  let cube = new Cube(req.body);\
+  res.redirect("/");\
+\});\
+\cf0 \
+or\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 router.post("/create", validateCube, (req, res) => \{\
+  res.redirect("/");\
+\});\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 - validateCube takes req, res, next\
+\
+\
+- return promise from fs\
+Const fs = require(\'91fs/promise\'92)\
+\
+Return fs.writeFile(\'85)\
+\
+- sanitising\
+Protect input from js\
+- look for libraries\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf7 -\'97 END \'97- }

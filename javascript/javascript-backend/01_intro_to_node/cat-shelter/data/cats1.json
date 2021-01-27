@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Jen",
+    "description": "Some cat ...",
+    "breed": "Angora",
+    "image": "cat-1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Jen 2",
+    "description": "Some more cats ...",
+    "breed": "Persian",
+    "image": "cat-1.jpg"
+  }
+]
