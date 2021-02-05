@@ -1,12 +1,15 @@
 const fs = require("fs");
-const uniqid = require("uniqid");
+// const uniqid = require("uniqid");
 const Cube = require("../models/Cube");
 
 const path = require("path");
 const productData = require("../data/productData");
+const Accessory = require("../models/Accessory");
 
-function getAll(query) {
-  let result = productData.getAll();
+async function getAll(query) {
+  // let result = productData.getAll()
+
+  let result = await Cube.find({}).lean();
 
   if (query.search) {
     result = result.filter((x) => x.name.toLowerCase().includes(query.search));
@@ -24,23 +27,38 @@ function getAll(query) {
 }
 
 function create(data) {
-  let cube = new Cube(
-    uniqid(),
-    data.name,
-    data.description,
-    data.imageUrl,
-    data.difficultyLevel
-  );
+  let cube = new Cube(data);
 
-  return productData.create(cube);
+  // data layer
+  // return productData.create(cube);
+
+  // class method
+  // return cube.create();
+
+  return cube.save();
 }
 
 function getOne(id) {
-  return productData.getOne(id);
+  // return productData.getOne(id);
+  return Cube.findById(id).lean();
+}
+function getOneWithAccessories(id) {
+  return Cube.findById(id).populate("accessories").lean();
+}
+
+async function attachAccessory(productId, accessoryId) {
+  const product = await Cube.findById(productId);
+  const accessory = await Accessory.findById(accessoryId);
+
+  product.accessories.push(accessory);
+  product.save();
+  return product;
 }
 
 module.exports = {
   create,
   getAll,
   getOne,
+  attachAccessory,
+  getOneWithAccessories,
 };

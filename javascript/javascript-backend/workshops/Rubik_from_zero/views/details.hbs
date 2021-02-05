@@ -1,4 +1,3 @@
-
 <main>
   <h1>{{ product.name }}</h1>
   <img class="cube" src="{{ product.imageUrl }}">
@@ -6,5 +5,16 @@
     <p><span>Description:</span> {{ product.description }}</p>
     <p><span>Difficulty level:</span> {{ product.difficultyLevel }}</p>
     <a class="btn" href="/">Back</a>
+    <a class="btn" href="/{{ product._id }}/attach">Attach</a>
   </div>
+  <h2>Accessories</h2>
+  <div class="accessories">
+    {{#each product.accessories}}
+    {{>accessory}}
+    {{ else }}
+    <h3 class="italic">This cube has no accessories yet...</h3>
+    {{/each}}
+
+  </div>
+
 </main>
