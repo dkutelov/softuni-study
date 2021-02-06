@@ -1,5 +1,8 @@
 const express = require("express");
 const handlebars = require("express-handlebars");
+const auth = require("../middlewares/auth");
+const cookieParser = require("cookie-parser");
+const { use } = require("../controllers/authController");
 
 module.exports = function (app) {
   app.use(express.static("public"));
@@ -8,7 +11,7 @@ module.exports = function (app) {
     "hbs",
     handlebars({
       extname: ".hbs",
-    })
+    }),
   );
 
   app.set("view engine", "hbs");
@@ -16,6 +19,9 @@ module.exports = function (app) {
   app.use(
     express.urlencoded({
       extended: true,
-    })
+    }),
   );
+
+  app.use(cookieParser());
+  app.use(auth());
 };

@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+const { Schema, Types, model } = require("mongoose");
 
-const cubeShema = new mongoose.Schema({
+const cubeShema = new Schema({
   name: {
     type: String,
     required: true,
@@ -26,13 +26,17 @@ const cubeShema = new mongoose.Schema({
   },
   accessories: [
     {
-      type: mongoose.Types.ObjectId,
+      type: Types.ObjectId,
       ref: "Accessory",
     },
   ],
+  creatorId: {
+    type: Types.ObjectId,
+    ref: "User",
+  },
 });
 
-module.exports = mongoose.model("Cube", cubeShema);
+module.exports = model("Cube", cubeShema);
 
 // const path = require("path");
 // const fs = require("fs/promises");

@@ -26,8 +26,8 @@ async function getAll(query) {
   return result;
 }
 
-function create(data) {
-  let cube = new Cube(data);
+function create(userId, data) {
+  let cube = new Cube({ ...data, creatorId: userId });
 
   // data layer
   // return productData.create(cube);
@@ -41,6 +41,15 @@ function create(data) {
 function getOne(id) {
   // return productData.getOne(id);
   return Cube.findById(id).lean();
+}
+function updateOne(id, data) {
+  // return productData.getOne(id);
+  return Cube.updateOne({ _id: id }, data).lean();
+}
+
+function deleteOne(id) {
+  // return productData.getOne(id);
+  return Cube.deleteOne({ _id: id });
 }
 function getOneWithAccessories(id) {
   return Cube.findById(id).populate("accessories").lean();
@@ -61,4 +70,5 @@ module.exports = {
   getOne,
   attachAccessory,
   getOneWithAccessories,
+  updateOne,
 };
