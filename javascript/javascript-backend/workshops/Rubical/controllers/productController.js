@@ -1,4 +1,6 @@
 const { Router } = require("express");
+const validator = require("validator");
+
 const productService = require("../services/productService");
 const accessoryService = require("../services/accessoryService");
 const isAuthenticated = require("../middlewares/isAuthenticated");
@@ -7,7 +9,6 @@ const router = Router();
 
 router.get("/", async (req, res) => {
   let products = await productService.getAll(req.query);
-  console.log(products);
   res.render("index", {
     title: "Home",
     products,
@@ -52,7 +53,7 @@ function validateProduct(req, res, next) {
   }
 }
 
-router.post("/create", isAuthenticated, validateProduct, (req, res) => {
+router.post("/create", isAuthenticated, (req, res) => {
   // Validate inputs
   //   productService.create(req.body, (err) => {
   //     if (err) {
@@ -65,7 +66,7 @@ router.post("/create", isAuthenticated, validateProduct, (req, res) => {
     .then(() => {
       res.redirect("/");
     })
-    .catch((err) => res.send(500).end());
+    .catch(next);
 });
 
 router.get("/details/:id", async (req, res) => {

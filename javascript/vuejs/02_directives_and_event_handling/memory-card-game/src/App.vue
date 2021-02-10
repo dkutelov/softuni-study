@@ -2,7 +2,7 @@
   <div id="app">
     <div class="counter">
       <h1>
-        {{ timeElapsed }}
+        {{ remainingTime }}
       </h1>
     </div>
     <section class="memory-game">
@@ -64,18 +64,17 @@ export default {
       cards: [],
       flippedCards: [],
       jsBadge,
-      timeElapsed: 0,
+      remainingTime: 60,
+      timer: null,
     };
   },
   computed: {
-    disabledCount() {
-      return this.cards.filter((c) => c.disabled).length;
+    allCardsGuessed() {
+      return this.cards.filter((c) => c.disabled).length === this.cards.length;
     },
   },
   methods: {
     onCardClick(i, event) {
-      //TODO disabled cards class
-
       this.cards[i].flipped = !this.cards[i].flipped;
 
       if (this.flippedCards.length < 2) {
@@ -92,19 +91,48 @@ export default {
       }
       this.cards = shuffledCards;
     },
+    resetGame(message) {
+      if (this.timer) {
+        clearInterval(this.timer);
+        this.remainingTime = 60;
+      }
+
+      if (message) {
+        const newGame = confirm(message);
+        if (!newGame) return;
+      }
+
+      this.cards.forEach((c) => {
+        c.disabled = false;
+        c.flipped = false;
+      });
+      this.flippedCards = [];
+
+      this.shuffleCards();
+
+      const timer = setInterval(() => {
+        this.remainingTime -= 1;
+      }, 1000);
+      this.timer = timer;
+    },
   },
   created() {
     this.shuffleCards();
   },
   mounted() {
-    //TODO move to function reset game
-    setInterval(() => {
-      this.timeElapsed += 1;
-    }, 1000);
+    this.resetGame();
   },
   watch: {
-    //TODO watcher if all cards are disabled
-    //TODO watcher if elapsed time === 60;
+    allCardsGuessed: function(newValue, oldValue) {
+      if (newValue) {
+        this.resetGame("Game is over! New game?");
+      }
+    },
+    remainingTime: function(newValue, oldValue) {
+      if (newValue === 0) {
+        this.resetGame("Time is up! New game?");
+      }
+    },
     flippedCards: function(newValue, oldValue) {
       if (newValue.length === 2) {
         const card1 = this.cards[this.flippedCards[0].i];
