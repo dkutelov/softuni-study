@@ -55,7 +55,57 @@ const cardsSource = [
     flipped: false,
     image: reactCard,
   },
+  {
+    type: "angular",
+    disabled: false,
+    flipped: false,
+    image: angularCard,
+  },
+  {
+    type: "angular",
+    disabled: false,
+    flipped: false,
+    image: angularCard,
+  },
+  {
+    type: "backbone",
+    disabled: false,
+    flipped: false,
+    image: backboneCard,
+  },
+  {
+    type: "backbone",
+    disabled: false,
+    flipped: false,
+    image: backboneCard,
+  },
+  {
+    type: "ember",
+    disabled: false,
+    flipped: false,
+    image: emberCard,
+  },
+  {
+    type: "ember",
+    disabled: false,
+    flipped: false,
+    image: emberCard,
+  },
+  {
+    type: "aurelia",
+    disabled: false,
+    flipped: false,
+    image: aureliaCard,
+  },
+  {
+    type: "aurelia",
+    disabled: false,
+    flipped: false,
+    image: aureliaCard,
+  },
 ];
+const timerSeconds = 60;
+let timer = null;
 
 export default {
   name: "App",
@@ -64,8 +114,7 @@ export default {
       cards: [],
       flippedCards: [],
       jsBadge,
-      remainingTime: 60,
-      timer: null,
+      remainingTime: timerSeconds,
     };
   },
   computed: {
@@ -76,13 +125,10 @@ export default {
   methods: {
     onCardClick(i, event) {
       this.cards[i].flipped = !this.cards[i].flipped;
-
-      if (this.flippedCards.length < 2) {
-        this.flippedCards.push({ type: this.cards[i].type, i });
-      }
+      this.flippedCards.push({ type: this.cards[i].type, i });
     },
     shuffleCards() {
-      const shuffledCards = [...cardsSource];
+      const shuffledCards = [...JSON.parse(JSON.stringify(cardsSource))];
       for (var i = shuffledCards.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = shuffledCards[i];
@@ -92,9 +138,9 @@ export default {
       this.cards = shuffledCards;
     },
     resetGame(message) {
-      if (this.timer) {
-        clearInterval(this.timer);
-        this.remainingTime = 60;
+      if (timer) {
+        clearInterval(timer);
+        this.remainingTime = timerSeconds;
       }
 
       if (message) {
@@ -110,10 +156,9 @@ export default {
 
       this.shuffleCards();
 
-      const timer = setInterval(() => {
+      timer = setInterval(() => {
         this.remainingTime -= 1;
       }, 1000);
-      this.timer = timer;
     },
   },
   created() {
