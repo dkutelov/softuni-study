@@ -1,54 +1,54 @@
 const router = require("express").Router();
+
 const authService = require("../services/authService");
-const { body, validationResult } = require("express-validator");
 const { COOKIE_NAME } = require("../config/config");
+const {
+  validateRegister,
+  validateLogin,
+} = require("./validators/userValidator");
+
+const isGuest = require("../middlewares/isGuest");
 
 router.get("/register", (req, res) => {
   res.render("register");
 });
 
-router.post(
-  "/register",
-  body("rePassword")
-    .trim()
-    .custom((value, { req }) => {
-      if (value !== req.body.password) {
-        return Promise.reject("Password missmatch!");
-      }
-    }),
-  (req, res, next) => {
-    const { username, password, rePassword } = req.body;
+router.post("/register", (req, res, next) => {
+  const userData = req.body;
+  userData.email = userData.email.toLowerCase();
+  req.afterErrorPage = "register";
 
-    let errors = validationResult(req).array();
+  const { error } = validateRegister(userData);
 
-    //TODO abstract to be able to re-use
-    if (errors.length > 0) {
-      let error = errors[0];
+  if (error.message) {
+    return next(error);
+  }
 
-      error.message = error.msg;
-      next(errors);
-    }
-
-    authService
-      .register(username, password)
-      .then((createdUser) => {
-        console.log(createdUser);
-        res.redirect("/auth/login");
-        // or return authService.login(username, password)
-      }) //.then(token => { }) res.cookie(COOKIE_NAME, token, { httpOnly: true });
-      //   res.redirect("/");
-      .catch(next);
-  },
-);
+  authService
+    .register(userData.email, userData.password)
+    .then(() => {
+      res.redirect("/auth/login");
+    })
+    .catch(next);
+});
 
 router.get("/login", (req, res) => {
   res.render("login");
 });
 
 router.post("/login", (req, res, next) => {
-  console.log(req.body);
+  const userData = req.body;
+  userData.email = userData.email.toLowerCase();
+  req.afterErrorPage = "login";
+
+  const { error } = validateLogin(userData);
+
+  if (error.message) {
+    return next(error);
+  }
+
   authService
-    .login(username, password)
+    .login(userData.email, userData.password)
     .then((token) => {
       res.cookie(COOKIE_NAME, token, { httpOnly: true });
       res.redirect("/");

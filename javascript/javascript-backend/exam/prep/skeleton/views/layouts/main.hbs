@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <title>JS backend exam skeleton</title>
 </head>
-<body>
+<body>  
     {{#if error}}
-    <div>{{error.message}}</div>
+        <p>{{ error.message }}</p>
     {{/if}}
     {{{ body }}}
 </body>

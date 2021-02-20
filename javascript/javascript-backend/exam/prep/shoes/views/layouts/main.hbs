@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Register Page</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                {{#if isAuthenticated}}
+                <li>
+                    <a href="/shoes/create">Create new offer</a>
+                </li> 
+                {{/if}}
+                <li class="site-logo">Shoe</li>
+                <li>
+                    <a href="/">
+                        <img src="/sneakers.png" alt="">
+                    </a>
+                </li>
+                <li class="site-logo">Shelf</li>
+                {{#if isAuthenticated}}
+                <li>Welcome, {{user.email}} | 
+                    <a  href="/auth/logout">Logout</a>
+                </li>
+                <li><a  href="/auth/profile">Profile</a></li>
+                {{/if}}
+            </ul>
+        </nav>
+    </header>
+    <main>
+    {{#if error}}
+        <p class="error">{{ error.message }}</p>
+    {{/if}}
+    {{{ body }}}
+    </main>
+    <footer>
+        <p><a href="https://softuni.bg">Software University</a> - JS Back End @ 2020</p>
+    </footer>
+</body>
+
+</html>

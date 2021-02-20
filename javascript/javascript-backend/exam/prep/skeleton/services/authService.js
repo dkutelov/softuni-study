@@ -3,22 +3,24 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { SECRET } = require("../config/config");
 
-const register = (username, password) => {
-  let user = new User({ username, password });
+const register = async (email, password) => {
+  let usernameTaken = await User.findOne({ email });
 
-  return user.save();
+  if (usernameTaken) throw { message: "User already exisits" };
+
+  return new User({ email, password }).save();
 };
 
-const login = async (username, password) => {
-  let user = await User.findOne({ username });
-  if (!user) throw { message: "No such user", status: 404 };
+const login = async (email, password) => {
+  let user = await User.findOne({ email });
 
-  //   // if (!user) throw {message: "No such user", status: 404}
+  if (!user) throw { message: "No such user" };
+
   const areEqual = await bcrypt.compare(password, user.password);
 
-  if (!areEqual) throw { message: "Invalid password", status: 404 };
+  if (!areEqual) throw { message: "Invalid password" };
 
-  let token = jwt.sign({ _id: user._id, username: user.user.username }, SECRET);
+  let token = jwt.sign({ _id: user._id, username: user.username }, SECRET);
   return token;
 };
 
