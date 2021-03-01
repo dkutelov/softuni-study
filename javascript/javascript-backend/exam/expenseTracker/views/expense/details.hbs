@@ -1,0 +1,23 @@
+ <section class="expense-report">
+    <h1>ID: {{_id}}</h1>
+
+    <div class="report-category">
+        <img src="/static/images/amount.png" alt="{{merchant}}">
+        <p>{{ merchant }} - лв {{ formatTotal total }}</p>
+    </div>
+
+    <div class="report-merchant">
+        <p>{{ getCategoryName category }}</p>
+    </div>
+
+    <div class="report-description">
+        <img src="static/images/hastag.png" alt="">
+        <p>{{ description }}</p>
+    </div>
+
+    {{#if report}}
+    <div class="report-action">
+        <a href="/expenses/{{_id}}/delete">Stop tracking</a>
+    </div>
+    {{/if}}
+</section>

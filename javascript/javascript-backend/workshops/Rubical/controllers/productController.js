@@ -7,6 +7,15 @@ const isAuthenticated = require("../middlewares/isAuthenticated");
 
 const router = Router();
 
+const options = [
+  { id: 1, name: "1 - Very Easy" },
+  { id: 2, name: "2 - Easy" },
+  { id: 3, name: "3 - Medium (Standard 3x3)" },
+  { id: 4, name: "4 - Intermediate" },
+  { id: 5, name: "5 - Expert" },
+  { id: 6, name: "6 - Hard" },
+];
+
 router.get("/", async (req, res) => {
   let products = await productService.getAll(req.query);
   res.render("index", {
@@ -18,6 +27,7 @@ router.get("/", async (req, res) => {
 router.get("/create", isAuthenticated, (req, res) => {
   res.render("create", {
     title: "Create",
+    options,
   });
 });
 
@@ -25,6 +35,7 @@ router.get("/:productId/edit", isAuthenticated, async (req, res) => {
   const product = await productService.getOne(req.params.productId);
   res.render("editCube", {
     ...product,
+    options,
   });
 });
 
@@ -53,14 +64,7 @@ function validateProduct(req, res, next) {
   }
 }
 
-router.post("/create", isAuthenticated, (req, res) => {
-  // Validate inputs
-  //   productService.create(req.body, (err) => {
-  //     if (err) {
-  //       return res.status(500).end();
-  //     }
-  //     res.redirect("/");
-  //   });
+router.post("/create", isAuthenticated, (req, res, next) => {
   productService
     .create(req.user.id, req.body)
     .then(() => {

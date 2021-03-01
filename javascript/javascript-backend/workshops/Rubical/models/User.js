@@ -20,12 +20,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
     trim: true,
-    minlength: 8,
-    validate: {
-      validator: (value) => ENGLISH_ALPHANUMERIC_PATTERN.test(value),
-      message: (props) =>
-        `Password should contain only English letter and numbers!`,
-    },
+    minlength: 5,
   },
 });
 

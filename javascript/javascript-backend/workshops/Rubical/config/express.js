@@ -2,6 +2,8 @@ const express = require("express");
 const handlebars = require("express-handlebars");
 const auth = require("../middlewares/auth");
 const cookieParser = require("cookie-parser");
+const helpers = require("./hbsHelpers");
+
 const { use } = require("../controllers/authController");
 
 module.exports = function (app) {
@@ -11,6 +13,7 @@ module.exports = function (app) {
     "hbs",
     handlebars({
       extname: ".hbs",
+      helpers,
     }),
   );
 

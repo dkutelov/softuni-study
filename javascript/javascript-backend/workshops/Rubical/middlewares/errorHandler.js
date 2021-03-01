@@ -1,7 +1,7 @@
 function errorHandler(err, req, res, next) {
   if (!err) return;
-
-  res.status(500).render("home", { error: err });
+  console.log(err);
+  res.status(500).render("index", { error: err });
 }
 
 module.exports = errorHandler;

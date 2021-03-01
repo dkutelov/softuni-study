@@ -1,0 +1,15 @@
+<h1>Hello from home page</h1>
+{{user.username}}
+
+<a href="/auth/register">register</a>
+<a href="/auth/login">login</a>
+<a href="/auth/logout">logout</a>
+<a href="/items/create">create</a>
+
+<div>
+    {{#each items}}
+    {{>item}}
+    {{else}}
+        <p>No items</p>
+    {{/each}}
+</div>

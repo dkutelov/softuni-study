@@ -1,14 +1,14 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2578
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
 {\colortbl;\red255\green255\blue255;\red161\green0\blue63;\red64\green118\blue25;\red15\green57\blue175;
-\red253\green139\blue9;\red21\green93\blue255;\red46\green0\blue141;\red75\green0\blue240;\red0\green0\blue0;
-\red117\green117\blue117;\red251\green0\blue7;\red149\green149\blue149;\red38\green38\blue38;\red94\green176\blue32;
-\red253\green139\blue9;}
+\red253\green139\blue9;\red21\green93\blue255;\red46\green0\blue141;\red75\green0\blue240;\red15\green57\blue175;
+\red0\green0\blue0;\red117\green117\blue117;\red251\green0\blue7;\red149\green149\blue149;\red21\green93\blue255;
+\red38\green38\blue38;\red94\green176\blue32;}
 {\*\expandedcolortbl;;\cssrgb\c69983\c8943\c31331;\cssrgb\c30912\c52771\c12623;\cssrgb\c6238\c31382\c74150;
-\cssrgb\c100000\c61456\c0;\cssrgb\c8872\c47049\c100000;\cssrgb\c24324\c6455\c62064;\cssrgb\c37152\c9588\c95573;\cssrgb\c0\c0\c0;
-\cssrgb\c53231\c53231\c53231;\cssrgb\c100000\c12195\c0;\cssrgb\c65058\c65058\c65058;\cssrgb\c19912\c19912\c19912;\cssrgb\c43067\c72927\c16222;
-\cssrgb\c100000\c61456\c0;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww15560\viewh20660\viewkind0
+\cssrgb\c100000\c61456\c0;\cssrgb\c8872\c47049\c100000;\cssrgb\c24324\c6455\c62064;\cssrgb\c37152\c9588\c95573;\cssrgb\c6238\c31382\c74150;
+\cssrgb\c0\c0\c0;\cssrgb\c53231\c53231\c53231;\cssrgb\c100000\c12195\c0;\cssrgb\c65058\c65058\c65058;\cssrgb\c8872\c47049\c100000;
+\cssrgb\c19912\c19912\c19912;\cssrgb\c43067\c72927\c16222;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww27100\viewh20660\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\fs28 \cf0 \
@@ -48,9 +48,11 @@
 \cf3 URL module\cf0 \
 Parses an address with the parse() function\
 Returns an object with info about the url\
+\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf4 const url = require('url');\
 let urlObj = url.parse(req.url);\cf0 \
+\
 - creates an object\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf6 Path\cf0  - includes query string\
@@ -207,16 +209,17 @@ let data = fs.readFileSync(\'91path to file\'92, \{ encoding: \'91utf8\'92\})\
 res.write(data)\
 res.end()\
 \
-\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf9 \
 fs.readFile(\'91path\'92, \'91utf8\'92, (err, data) => \{\
 	if (err) \{\
 		return res.end()\
 	\}\
-	// reads the whole file and then writes it\
+	\cf10 // reads the whole file and then writes it\cf9 \
 	res.write(data);\
 	res.end();\
 \
-\})\
+\})\cf0 \
 \
 - with promise\
 \
@@ -278,7 +281,7 @@ app.get(\'91/\'91, (req, res) => \{\})\cf0 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf6 app.post(\'91/\'92, (req, res) => \{\})\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf9 - all methods:\cf6 \
+\cf10 - all methods:\cf6 \
 app.all(\'91/about\'92, (req, res) => \{\})\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf0 \
@@ -288,8 +291,8 @@ app.all(\'91/about\'92, (req, res) => \{\})\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf0 - for status; does not ends the request\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf4 res.status(200); \cf9 // get ok\cf0 \
-\cf4 res.status(201); \cf9 // created\
+\cf4 res.status(200); \cf10 // get ok\cf0 \
+\cf4 res.status(201); \cf10 // created\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf0 \
 - use 
@@ -318,7 +321,7 @@ app.all(\'91/about\'92, (req, res) => \{\})\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf3 Routing\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf10 https://expressjs.com/en/guide/routing.html\cf0 \
+\cf11 https://expressjs.com/en/guide/routing.html\cf0 \
 \
 - works from top to bottom and executes the first that meets the criteria\
 - routes are chain able since all return app when we use app.route()\
@@ -326,8 +329,8 @@ app.all(\'91/about\'92, (req, res) => \{\})\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf7 Route parameters\cf0 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf9 - use / and :\
-- get with \cf11 req.params\cf6 \
+\cf10 - use / and :\
+- get with \cf12 req.params\cf6 \
 app.get('/users/:userId/books/:bookId', function (req, res) \{\
   res.send(req.params)\
 \})\
@@ -362,15 +365,14 @@ app.get('/users/:userId/books/:bookId', function (req, res) \{\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf8 Download file from the browser\cf0 \
 - get 200 ok\
-- \cf12 Content-Disposition: attachment; filename=\'93home.html\'94\cf0 \
+- \cf13 Content-Disposition: attachment; filename=\'93home.html\'94\cf0 \
 means the browser has to download the file\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf6 app.get("/\cf11 download\cf6 ", (req, res) => \{\
+\cf6 app.get("/\cf12 download\cf6 ", (req, res) => \{\
   res.download("./views/home.html");\
 \});\cf0 \
 - does not change the route\
 - /attachment does not end, so we can redirect and end\
-\
 \
 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
@@ -384,7 +386,7 @@ means the browser has to download the file\
 \cf8 Render\cf0 \
 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf6 res.sendFile(AbsulutePath)\cf0  - sends the file to the browser and renders it, but path need to be absolute\
+\cf6 res.sendFile(AbsolutePath)\cf0  - sends the file to the browser and renders it, but path need to be absolute\
 \cf6 res.sendFile(RelativePath, \{ root: __dirname \})\cf0 \
 - MEME types are automatically detected\
 \
@@ -452,7 +454,8 @@ app.set("view engine", "handlebars");\cf0 \
 \
 \
 - node and express can read json but needs to be with the extension\
-Const cats = require(\'91cats.json\'92);\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf14 const cats = require(\'91cats.json\'92);\cf0 \
 \
 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
@@ -478,7 +481,7 @@ Const cats = require(\'91cats.json\'92);\
 \fs28 \cf0 \
 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf11 - DB backup for my projects !!!\
+\cf12 - DB backup for my projects !!!\
 - do not get data that you do not need, use projection, select\cf0 \
 \
 - mongo db driver - connect node js with mongo db\
@@ -512,12 +515,10 @@ const MongoClient = mongodb.MongoClient;\cf0 \
 \
 - findOne\
 \cf6 people.findOne(\{name:\'94dari\'94\}, (err, result)=> \{\
-\
 	if (err) \{\
 		console.log(err);\
 		return;\
 	\}\
-\
 	console.log(result)\
 \})\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
@@ -552,7 +553,7 @@ const MongoClient = mongodb.MongoClient;\cf0 \
 \
 \
 \
-- use toArray for find(\{\})\
+- use \cf9 toArray\cf0  for \cf9 find(\{\})\cf0 \
 \
 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
@@ -600,7 +601,7 @@ person.save((err, res) => \{\
 \})\
 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf9 Or chain promise\cf6 \
+\cf10 Or chain promise\cf6 \
 \
 person.save().then(res => console.log(res))\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
@@ -611,7 +612,7 @@ Methods (for computed properties)\
 \cf6 const studentSchema = new mongoose.Schema(\{...\});\
 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf9 - can not use arrow functions for this to work; should be anonymous\cf6 \
+\cf10 - can not use arrow functions for this to work; should be anonymous\cf6 \
 studentSchema\cf2 .methods.getInfo\cf6  = function() \{ return `I am $	\{this.firstName\} $\{this.lastName\}`;\
 \};\cf0 \
  \
@@ -657,10 +658,12 @@ Student.findById(id).then((person) => \{\
 \});\cf0 \
 \
 \
-Student\
-	.findByIdAndUpdate(id, \{$set: \{prop: newVal\}\}, callback)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf9 Student\
+	.findByIdAndUpdate(id, \{$set: \{prop: newVal\}\}, callback)\cf0 \
 \
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf6 Student\
 	.updateOne(\{_id: id\}, \{$set: \{propertyName: newValue\}\})\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
@@ -678,16 +681,20 @@ Or\
 \cf4 Student.find(\{\}).where('age').gt(7).lt(14)\
 Student.find(\{\}).where('facultyNumber').equals('12399')\cf0 \
 - can use also mongo native\
-\{$or:[conditionOne:true, conditionTwo: true]\}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf14 \{$or:[conditionOne:true, conditionTwo: true]\}\cf0 \
 \
 \
 - Select only some fields, Projection\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf4 Student.findOne(\{'lastName':'Kirilov'\}).select('name age')\cf0 \
 \
-Person.find(\{\}).select(\'91name\'92);\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf9 Person.find(\{\}).select(\'91name\'92);\cf0 \
 \
 \
 Sort\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf4 Student.find(\{\}).sort(\{age:-1\})\cf0 \
 \
 Limit and skip\
@@ -771,7 +778,7 @@ https://mongoosejs.com/docs/populate.html\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf6 router.post("/create", (req, res) => \{\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf13   // Validate inputs here\cf6 \
+\cf15   // Validate inputs here\cf6 \
   let cube = new Cube(req.body);\
   res.redirect("/");\
 \});\
@@ -788,9 +795,9 @@ or\
 \
 \
 - return promise from fs\
-Const fs = require(\'91fs/promise\'92)\
+\cf9 const fs = require(\'91fs/promise\'92)\cf0 \
 \
-Return fs.writeFile(\'85)\
+\cf9 return fs.writeFile(\'85)\cf0 \
 \
 - sanitising\
 Protect input from js\
@@ -806,7 +813,7 @@ Protect input from js\
 - use 3rd party auth provider! Also supports multi app: web, mobile iOS, Android, PWA\
 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf14 Cookies\cf0 \
+\cf16 Cookies\cf0 \
 - oldest way to maintain state so server can recognise the client\
 - save data on the client side in the browser\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
@@ -825,7 +832,7 @@ HTTP only - not accessible from js via document.cookie or console\
 \
 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf14 Sessions\cf0 \
+\cf16 Sessions\cf0 \
 - store data for the user on the server\
 - cookie based, the cookie holds id\
 - on the server we keep the data for the user with this id\
@@ -833,7 +840,7 @@ HTTP only - not accessible from js via document.cookie or console\
 - cookie: \{ secure: true \} - create id only if connection is https\
 \
 \
-\cf14 Bcrypt\cf0 \
+\cf16 Bcrypt\cf0 \
 - hasing function\
 - crypto-js is more used\
 https://cryptojs.gitbook.io/docs/\
@@ -842,7 +849,7 @@ https://cryptojs.gitbook.io/docs/\
 - bcrypt-promise - promisses instead of callback\
 \
 \
-\cf14 JSON Web token\cf0 \
+\cf16 JSON Web token\cf0 \
 - used a lot lately\
 - digitally signed with RSA or ECDSA\
 - can check if it is original and it has been modified\
@@ -867,9 +874,10 @@ https://cryptojs.gitbook.io/docs/\
 - works on server and client\
 \
 \
-isEmail()\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf9 isEmail()\cf0 \
 Use the following import only what we need (Destructuring import the whole library\
-const isEmail = require(\'91validator/lib/isEmail\'92)\
+\cf9 const isEmail = require(\'91validator/lib/isEmail\'92)\cf0 \
 \
 \
 \{ error, username: req.body.username \}\
@@ -885,11 +893,11 @@ const isEmail = require(\'91validator/lib/isEmail\'92)\
 \cf4 const \{ body \} = require('express-validator');\
 body('email')\
 	.isEmail() // check if the string is an email (validation)\
-	.normalizeEmail(), \cf9 // canonicalizes an email address (sanitization)\
+	.normalizeEmail(), \cf10 // canonicalizes an email address (sanitization)\
 \cf4 body('password')\
 	.isLength(\{ min: 5 \})\
 	.isAlphanumeric()\
-	.trim()\cf9  // trim characters (whitespace by default) - sanitization\
+	.trim()\cf10  // trim characters (whitespace by default) - sanitization\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf0 \
 https://express-validator.github.io/docs/check-api.html\
@@ -946,10 +954,11 @@ Put/Patch /api/posts/123\
 \fs28 \cf0 \
 \
 Pass data from page scope to the partial\
-\{\{> item isAuth=../isAuth\}\}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf9 \{\{> item isAuth=../isAuth\}\}\cf0 \
 \
 - does not work: it is wrong to chain to async\
-Const getAll = () => Course.find(\{\}).lean()\cf15 .map(x => (\{\'85x, createdAt: new Date(x.createdAt).toLocaleString(undefined, \{weekday: \'91short\'92\})\}))\cf0 \
+Const getAll = () => Course.find(\{\}).lean()\cf5 .map(x => (\{\'85x, createdAt: new Date(x.createdAt).toLocaleString(undefined, \{weekday: \'91short\'92\})\}))\cf0 \
 \
 \
 \

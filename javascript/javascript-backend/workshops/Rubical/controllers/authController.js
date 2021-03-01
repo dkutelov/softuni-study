@@ -61,23 +61,6 @@ router.post(
   async (req, res) => {
     const { username, password, repeatPassword } = req.body;
 
-    // let isStrongPassword = validator.isStrongPassword(password, {
-    //   minLength: 8,
-    //   minLowercase: 1,
-    //   minUppercase: 1,
-    //   minNumbers: 1,
-    //   minSymbols: 1,
-    //   returnScore: false,
-    //   pointsPerUnique: 1,
-    //   pointsPerRepeat: 0.5,
-    //   pointsForContainingLower: 10,
-    //   pointsForContainingUpper: 10,
-    //   pointsForContainingNumber: 10,
-    //   pointsForContainingSymbol: 10,
-    // });
-
-    //let errors = validationResult(req); // object with array errors -> #each errors ->{{msg}}
-
     try {
       // catch will capture the error
       // if (!isStrongPassword) {

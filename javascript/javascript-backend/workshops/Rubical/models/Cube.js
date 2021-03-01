@@ -4,6 +4,7 @@ const cubeShema = new Schema({
   name: {
     type: String,
     required: true,
+    minlength: 3,
     trim: true,
   },
   description: {
@@ -16,7 +17,10 @@ const cubeShema = new Schema({
     type: String,
     required: true,
     trim: true,
-    validate: /^https?/,
+    validate: {
+      validator: /^https?/,
+      message: "Image url shout start with http or https!",
+    },
   },
   difficultyLevel: {
     type: Number,
