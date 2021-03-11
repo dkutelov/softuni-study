@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "image": "/blue-origami-bird.png",
+      "description": "1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quis nemo exercitationem quidem nobis itaque natus sequi quasi culpa a. Ipsum possimus est culpa dolorum fugiat placeat, veniam laudantium nemo!",
+      "author": "Robert"
+    },
+    {
+      "id": 2,
+      "image": "/blue-origami-bird.png",
+      "description": "2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quis nemo exercitationem quidem nobis itaque natus sequi quasi culpa a. Ipsum possimus est culpa dolorum fugiat placeat, veniam laudantium nemo!",
+      "author": "Robert"
+    },
+    {
+      "id": 3,
+      "image": "/blue-origami-bird.png",
+      "description": "3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quis nemo exercitationem quidem nobis itaque natus sequi quasi culpa a. Ipsum possimus est culpa dolorum fugiat placeat, veniam laudantium nemo!",
+      "author": "Robert Geilbreith"
+    }
+  ]
+}

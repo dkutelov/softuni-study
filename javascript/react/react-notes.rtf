@@ -1,7 +1,11 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2578
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
-{\colortbl;\red255\green255\blue255;\red161\green0\blue63;\red15\green57\blue175;}
-{\*\expandedcolortbl;;\cssrgb\c69983\c8943\c31331;\cssrgb\c6238\c31382\c74150;}
+{\colortbl;\red255\green255\blue255;\red161\green0\blue63;\red15\green57\blue175;\red46\green0\blue141;
+\red0\green0\blue0;\red25\green162\blue221;\red11\green32\blue99;\red46\green0\blue141;\red11\green32\blue99;
+\red25\green162\blue221;}
+{\*\expandedcolortbl;;\cssrgb\c69983\c8943\c31331;\cssrgb\c6238\c31382\c74150;\cssrgb\c24324\c6455\c62064;
+\cssrgb\c0\c0\c0;\cssrgb\c5821\c69898\c89230;\cssrgb\c4121\c18720\c46593;\cssrgb\c24324\c6455\c62064;\cssrgb\c4121\c18720\c46593;
+\cssrgb\c5821\c69898\c89230;}
 \paperw11900\paperh16840\margl1440\margr1440\vieww10780\viewh20780\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
@@ -11,15 +15,16 @@
 
 \fs36 \cf2 Intro to React and JSX
 \fs28 \cf0 \
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf0 \
+\
 JSX is compiled to plain JavaScript\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf3 <div\'a0className="red">Children\'a0Text</div>\cf0 \
 ->\
 \cf3 React.createElement("div",\
   \{\'a0className:\'a0"red"\'a0\},\
 \'a0\'a0"Children\'a0Text"\
 );\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf0 \
 \
 Expressions\
@@ -29,10 +34,83 @@ count = \{ 3 + 5 \}\
 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
+\fs36 \cf2 Components
+\fs28 \cf0 \
+\
+- component -> split UI into independent and reusable pieces\
+\
+\
+
+\fs36 \cf2 List of components
+\fs28 \cf0 \
+\
+- keys are used React to identify and track each element in a list; should be unique; if we use number -> number.toString() -> do not use indexes of map - react will be confused if we sort the data or delete an item in the middle, or add an item in the middle\
+\
+\
+
+\fs36 \cf2 Component Life Cycle Methods
+\fs28 \cf0 \
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 Mount\cf0 \
+\cf5 - components and their Childs are created and mounted to the DOM\
+\cf6 \
+constructor\
+static getDerivedStateFromProps\cf0 \
+\
+\cf7 render method\cf0 \
+React updates DOM and refs\
+\
+\cf6 componentDidMount\cf0 \
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf8 Update\cf0 \
+\
+- new props, setState(), forceUpdate()\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf9 render method\cf0 \
+React updates DOM and refs\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 componentDidUpdate\cf0 \
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf8 Unmount\cf0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf10 componentWillMount\cf0 \
+\
+- render method creates the elements and after that these are inserted in the DOM\
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs36 \cf2 CSS Modules
+\fs28 \cf0 \
+\
+- are scoped\
+- should be called name.module.css\
+\
+\
+import\'a0React,\'a0\{\'a0Component\'a0\}\'a0from\'a0'react';\
+import\'a0styles\'a0from\'a0'./Button.module.css';\
+\uc0\u8232 class\'a0Button\'a0extends\'a0Component\'a0\{\
+\'a0\'a0render()\'a0\{\
+\'a0\'a0\'a0\'a0return\'a0<button\'a0className=\{styles.error\}>Error\'a0Button</button>;\
+\'a0\'a0\}\
+\}\
+\
+\
+\
+
 \fs36 \cf2 Project
 \fs28 \cf0 \
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf0 \
+\
 graphQL\
 ApolloClient\
 Cloudinary\
